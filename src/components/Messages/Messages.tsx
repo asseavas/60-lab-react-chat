@@ -1,12 +1,18 @@
+import React from 'react';
 import MessageItem from './MessageItem';
+import {Message} from '../../types';
 
-const Messages = () => {
+interface Props {
+  messages: Message[];
+}
+
+const Messages: React.FC<Props> = ({messages}) => {
   return (
-    <div>
-      <MessageItem />
-      <MessageItem />
-      <MessageItem />
-    </div>
+    <>
+      {messages.slice(-15).reverse().map((message) => (
+        <MessageItem key={message._id} message={message} />
+      ))}
+    </>
   );
 };
 

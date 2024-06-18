@@ -1,8 +1,17 @@
-const MessageItem = () => {
+import React from 'react';
+import {Message} from '../../types';
+
+interface Props {
+  message: Message;
+}
+
+const MessageItem: React.FC<Props> = ({message}) => {
+  const formattedDate = new Date(message.datetime).toLocaleString();
+
   return (
     <div className="border border-3 rounded p-2 my-3 text-start">
-      <p><strong>John Doe</strong> - 18/6/2024 2:18:51</p>
-      <p>Hello world!</p>
+      <p><strong>{message.author}</strong> - {formattedDate}</p>
+      <p>{message.message}</p>
     </div>
   );
 };
