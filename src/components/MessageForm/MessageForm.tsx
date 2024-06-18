@@ -20,9 +20,9 @@ const MessageForm: React.FC<Props> = ({onSendMessage}) => {
   };
 
   return (
-    <form className="row g-3 d-flex" onSubmit={onFormSubmit}>
-      <h5 className="text-start">Chat</h5>
-      <div className="col-3 text-start">
+    <form className="row g-3 d-flex text-start p-4 bg-body-secondary rounded" onSubmit={onFormSubmit}>
+      <h4 className="mt-2">Chat</h4>
+      <div className="col-3">
         <label htmlFor="author" className="form-label">Author</label>
         <input
           type="text"
@@ -33,7 +33,7 @@ const MessageForm: React.FC<Props> = ({onSendMessage}) => {
           onChange={(event) => setAuthor(event.target.value)}
         />
       </div>
-      <div className="col-8 text-start">
+      <div className="col-7">
         <label htmlFor="message" className="form-label">Message</label>
         <input
           type="text"
@@ -44,7 +44,7 @@ const MessageForm: React.FC<Props> = ({onSendMessage}) => {
           onChange={(event) => setMessage(event.target.value)}
         />
       </div>
-      <div className="col-1 d-flex">
+      <div className="col-2 d-flex">
         <button type="submit" className="btn btn-primary w-100 mt-auto">Send</button>
       </div>
     </form>
